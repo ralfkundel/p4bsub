@@ -163,7 +163,7 @@ parser ParserImpl(packet_in packet, out headers hdr, inout metadata meta, inout 
     }
     state parse_event_16 {
         packet.extract(hdr.event[16]);
-        meta.valid_values_bitmask =  meta.valid_values_bitmask | (1 << 15);
+        meta.valid_values_bitmask =  meta.valid_values_bitmask | (1 << 16);
         last = hdr.event[16].nextId;
         transition parse_event;
     }
